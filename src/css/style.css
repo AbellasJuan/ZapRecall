@@ -55,6 +55,7 @@ CSS FLASHCARD FRONT PAGE
   justify-content: center;
   height: 100vh;
   align-items: center;
+
 }
 
 
@@ -79,6 +80,7 @@ CSS FLASHCARD FRONT PAGE
   font-weight: 700;
   text-align: center;
   font-style: normal;
+  
 }
 
 
@@ -88,6 +90,7 @@ CSS FLASHCARD FRONT PAGE
   top:12px;
   right: 12px;
   font-weight: 400;
+  
 }
 
 .logo-turn{
@@ -96,6 +99,7 @@ CSS FLASHCARD FRONT PAGE
   position: absolute;
   right: 12px;
   bottom: 12px;
+  cursor: pointer;
 }
 
 /* 
@@ -130,6 +134,7 @@ CSS FLASHCARD BACK PAGE
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .option span{
