@@ -1,13 +1,20 @@
 import Header from "../components/Header.js";
 import FlashCardBack from "./FlashCardBack.js";
 import { useState } from "react";
+import Success from "../components/Success.js";
 
 export default function FlashCardFront(props){
     
-    const {questions} = props;
+    const {questions, contadorCarta} = props;
     
     const [pagina, setPagina] = useState("FlashCardFront");
-    const [contadorCarta, setContadorCarta] = useState(0);
+    
+    console.log(contadorCarta)
+    
+    if (contadorCarta === 7) {
+        console.log("deu certo esse kao")
+        return (<Success/>)
+    }
     
     return(
     <>
@@ -21,7 +28,7 @@ export default function FlashCardFront(props){
                 <img className="logo-turn" src="assets/turn.png" alt="" onClick={() => (setPagina("FlashCardBack"))} />
             </div>
         </div>
-        </> : <FlashCardBack questions={props.questions} contadorCarta={contadorCarta} setContadorCarta={setContadorCarta}/>}
+        </> : <FlashCardBack questions={questions} contadorCarta={contadorCarta} />}
     </>
     )
 }

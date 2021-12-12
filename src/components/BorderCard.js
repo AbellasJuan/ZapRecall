@@ -27,7 +27,7 @@ export default function BorderCard(props){
                 <img className="logo-turn" src="assets/turn.png" alt="" onClick={changeCounterAndPage} />
             </div>
         </div>
-        </> : <FlashCardFront questions={props.questions}/>}
+        </> : <FlashCardFront questions={questions} contadorCarta={contadorCarta+1}/>}
     </>
     )
 }

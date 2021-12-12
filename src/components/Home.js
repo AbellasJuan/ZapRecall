@@ -49,6 +49,8 @@ export default function App(){
 
 const [paginaAtual, setPaginaAtual] = useState("Home");
 
+    const [contadorCarta, setContadorCarta] = useState(0);
+
     return (
         <>
         {paginaAtual === "Home" ?
@@ -63,7 +65,7 @@ const [paginaAtual, setPaginaAtual] = useState("Home");
             <img src="../assets/next.png" alt=""/>
         </button> 
         
-        </div> : <FlashCardFront  questions={questions}/>}
+        </div> : <FlashCardFront  questions={questions} contadorCarta={contadorCarta} />}
         
         </>
     )
