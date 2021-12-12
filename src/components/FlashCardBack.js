@@ -3,16 +3,17 @@ import BorderCard from "./BorderCard.js";
 import { useState } from "react";
 
 export default function FlashCardBack(props){
-
-    const { questions, contadorCarta} = props;
+    const {acertouMaisUm, acertou, questions, contadorCarta} = props;
 
     const [paginaDaResposta, setPaginaDaResposta] = useState("paginaResposta")
     const [borderColor, setBorderColor] = useState("")
-
+    
     function borderAndSet(color){
         setBorderColor(color);
         setPaginaDaResposta("BorderCard");
     };
+
+    console.log('acertou' , acertou, acertouMaisUm)
 
     return(
         <>
@@ -22,7 +23,7 @@ export default function FlashCardBack(props){
         <div className="container-flashcard">
             <div className="flash-card">
                 <div className="flashcard-back-title">{questions[contadorCarta].pergunta}</div>
-                <div className="flashcard-counter">1/8</div>
+                <div className="flashcard-counter">{contadorCarta+1}/{questions.length}</div>
                 <span style={{
                         'fontWeight': '400',
                         'fontSize': '16px',
@@ -43,13 +44,13 @@ export default function FlashCardBack(props){
                         <span>Lembrei com esforço</span>
                     </div>
                     
-                    <div className="option" style={{'borderColor': '#FFEF61'}} onClick={() => borderAndSet('#FFEF61')}>
+                    <div className="option" style={{'borderColor': '#FFEF61'}} onClick={() => {borderAndSet('#FFEF61') ; acertouMaisUm()}}>
                         <span style={{'fontWeight': '700'}}>Zap!</span>
                     </div>
                 
                 </div>
             </div>
-        </div></> : <BorderCard contadorCarta={contadorCarta} borderColor={borderColor} questions={questions}/>}
+        </div></> : <BorderCard acertouMaisUm={acertouMaisUm} acertou={acertou} contadorCarta={contadorCarta} borderColor={borderColor} questions={questions} />}
         </>
     )
-}
+};

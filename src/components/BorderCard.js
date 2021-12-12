@@ -4,7 +4,7 @@ import FlashCardFront from "./FlashCardFront.js";
 
 export default function BorderCard(props){
 
-    const {questions, contadorCarta, borderColor} = props;
+    const { acertouMaisUm, acertou, questions, contadorCarta, borderColor } = props;
 
     const [paginaNova, setPaginaNova] = useState("CardBorder");
 
@@ -22,12 +22,12 @@ export default function BorderCard(props){
             <div className="flashcard-back-title">
                 {questions[contadorCarta].pergunta}
             </div>
-                <div className="flashcard-counter">1/8</div>
+                <div className="flashcard-counter">{contadorCarta+1}/{questions.length}</div>
                 <span>{questions[contadorCarta].resposta}</span>
                 <img className="logo-turn" src="assets/turn.png" alt="" onClick={changeCounterAndPage} />
             </div>
         </div>
-        </> : <FlashCardFront questions={questions} contadorCarta={contadorCarta+1}/>}
+        </> : <FlashCardFront acertouMaisUm={acertouMaisUm} acertou={acertou} questions={questions} contadorCarta={contadorCarta+1}/>}
     </>
     )
 }
