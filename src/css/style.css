@@ -3,7 +3,7 @@
 	font-family: 'Roboto', sans-serif;
   }
 
-container {
+.container {
   color: #262626;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ img.initial-main-img{
   margin-top: 200px;
 }
 
-container button{
+.container button{
   width: 345px;
   height: 72px;
   margin-top: 200px;

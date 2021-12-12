@@ -4,6 +4,8 @@ import { useState } from "react";
 
 export default function FlashCardBack(props){
 
+    const { questions, contadorCarta} = props;
+
     const [paginaDaResposta, setPaginaDaResposta] = useState("paginaResposta")
     const [borderColor, setBorderColor] = useState("")
 
@@ -19,13 +21,13 @@ export default function FlashCardBack(props){
         <Header/>
         <div className="container-flashcard">
             <div className="flash-card">
-                <div className="flashcard-back-title">{props.questions[0].pergunta1}</div>
+                <div className="flashcard-back-title">{questions[contadorCarta].pergunta}</div>
                 <div className="flashcard-counter">1/8</div>
                 <span style={{
                         'fontWeight': '400',
                         'fontSize': '16px',
                 }}>
-                    {props.questions[0].resposta1}</span>
+                    {questions[contadorCarta].resposta}</span>
                 
                 <div className="response-options">
                 
@@ -47,7 +49,7 @@ export default function FlashCardBack(props){
                 
                 </div>
             </div>
-        </div></> : <BorderCard borderColor={borderColor} questions={props.questions}/>}
+        </div></> : <BorderCard contadorCarta={contadorCarta} borderColor={borderColor} questions={questions}/>}
         </>
     )
 }
