@@ -18,13 +18,13 @@ export default function BorderCard(props){
         <>
         <Header/>
         <div className="container-flashcard">
-            <div className="flash-card" style={{'border': `5px solid ${borderColor}`}}>
+            <div className="flash-card" style={{'border': `5px solid ${borderColor}`}} data-identifier="flashcard">
             <div className="flashcard-back-title">
                 {questions[contadorCarta].pergunta}
             </div>
-                <div className="flashcard-counter">{contadorCarta+1}/{questions.length}</div>
+                <div className="flashcard-counter" data-identifier="counter">{contadorCarta+1}/{questions.length}</div>
                 <span>{questions[contadorCarta].resposta}</span>
-                <img className="logo-turn" src="assets/turn.png" alt="" onClick={changeCounterAndPage} />
+                <img className="logo-turn" src="assets/turn.png" alt="" onClick={changeCounterAndPage} data-identifier="arrow"/>
             </div>
         </div>
         </> : <FlashCardFront acertouMaisUm={acertouMaisUm} acertou={acertou} questions={questions} contadorCarta={contadorCarta+1}/>}

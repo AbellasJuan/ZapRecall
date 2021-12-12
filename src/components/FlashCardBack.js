@@ -21,9 +21,9 @@ export default function FlashCardBack(props){
         <>
         <Header/>
         <div className="container-flashcard">
-            <div className="flash-card">
+            <div className="flash-card" data-identifier="flashcard">
                 <div className="flashcard-back-title">{questions[contadorCarta].pergunta}</div>
-                <div className="flashcard-counter">{contadorCarta+1}/{questions.length}</div>
+                <div className="flashcard-counter" data-identifier="counter">{contadorCarta+1}/{questions.length}</div>
                 <span style={{
                         'fontWeight': '400',
                         'fontSize': '16px',
