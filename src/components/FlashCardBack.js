@@ -5,18 +5,16 @@ import { useState } from "react";
 export default function FlashCardBack(props){
     const {acertouMaisUm, acertou, questions, contadorCarta} = props;
 
-    const [paginaDaResposta, setPaginaDaResposta] = useState("paginaResposta")
-    const [borderColor, setBorderColor] = useState("")
+    const [paginaDaResposta, setPaginaDaResposta] = useState("paginaResposta");
+    const [borderColor, setBorderColor] = useState("");
     
     function borderAndSet(color){
         setBorderColor(color);
         setPaginaDaResposta("BorderCard");
     };
 
-    console.log('acertou' , acertou, acertouMaisUm)
-
     return(
-        <>
+    <>
         {paginaDaResposta === "paginaResposta" ?
         <>
         <Header/>
@@ -50,7 +48,8 @@ export default function FlashCardBack(props){
                 
                 </div>
             </div>
-        </div></> : <BorderCard acertouMaisUm={acertouMaisUm} acertou={acertou} contadorCarta={contadorCarta} borderColor={borderColor} questions={questions} />}
-        </>
+        </div></> : 
+        <BorderCard acertouMaisUm={acertouMaisUm} acertou={acertou} contadorCarta={contadorCarta} borderColor={borderColor} questions={questions} />}
+    </>
     )
 };

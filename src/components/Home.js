@@ -1,5 +1,5 @@
-import React from "react";
 import { useState } from "react";
+
 import FlashCardFront from "./FlashCardFront.js";
 
 export default function App(){
@@ -48,18 +48,18 @@ export default function App(){
     ];
 
 const [paginaAtual, setPaginaAtual] = useState("Home");
-
+    // eslint-disable-next-line
     const [contadorCarta, setContadorCarta] = useState(0);
     const [acertou, setAcertou] = useState(0);
 
     function acertouMaisUm(){
         setAcertou(acertou+1);
-    }
+    };
 
     return (
-        <>
+    <>
         {paginaAtual === "Home" ?
-        <div  className="container">
+        <div  className="homepage">
         
         <div>
         <img className="initial-main-img" src="../assets/logo.png" alt=""></img>
@@ -71,7 +71,6 @@ const [paginaAtual, setPaginaAtual] = useState("Home");
         </button> 
         
         </div> : <FlashCardFront acertouMaisUm={acertouMaisUm} acertou={acertou} questions={questions} contadorCarta={contadorCarta} />}
-        
-        </>
+    </>
     )
-}
+};

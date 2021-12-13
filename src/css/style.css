@@ -3,7 +3,8 @@
 	font-family: 'Roboto', sans-serif;
   }
 
-.container {
+/*CSS HOME*/
+.homepage {
   color: #262626;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ img.initial-main-img{
   margin-top: 200px;
 }
 
-.container button{
+.homepage button{
   width: 345px;
   height: 72px;
   margin-top: 200px;
@@ -150,7 +151,7 @@ CSS SUCCESS/FAILURE SCREEN
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  margin-top: 40vh;
+  margin-top: 30vh;
   text-align: center;
 }
 
@@ -168,8 +169,7 @@ CSS SUCCESS/FAILURE SCREEN
   font-weight: 400;
 }
 
-/*buttom*/
-.exemplo{
+.button-result{
   width: 345px;
   height: 72px;
   margin-top: 30px;

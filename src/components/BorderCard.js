@@ -1,5 +1,6 @@
-import Header from "../components/Header.js";
 import { useState } from "react";
+
+import Header from "../components/Header.js";
 import FlashCardFront from "./FlashCardFront.js";
 
 export default function BorderCard(props){
@@ -27,7 +28,8 @@ export default function BorderCard(props){
                 <img className="logo-turn" src="assets/turn.png" alt="" onClick={changeCounterAndPage} data-identifier="arrow"/>
             </div>
         </div>
-        </> : <FlashCardFront acertouMaisUm={acertouMaisUm} acertou={acertou} questions={questions} contadorCarta={contadorCarta+1}/>}
+        </> : 
+        <FlashCardFront acertouMaisUm={acertouMaisUm} acertou={acertou} questions={questions} contadorCarta={contadorCarta+1}/>}
     </>
     )
 }
